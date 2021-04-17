@@ -1,4 +1,4 @@
-# learning_log
+# Learning Log
 
 A Learning Log Web Application created using Django. Helps keep a list of the topics you're learning about. <br>
 Whenever you learn something new about a topic, make an entry summarizing what you've learned.<br><br>
