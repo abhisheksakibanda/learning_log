@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
 
 
 def register(request):
@@ -14,7 +14,7 @@ def register(request):
 
         if form.is_valid():
             new_user = form.save()
-            # Log the user in and then redirect to home page.
+            # Log the user in and then redirect to the home page.
             login(request, new_user)
             return redirect('learning_logs:index')
 

@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import django_heroku
 import os
 from pathlib import Path
 
@@ -25,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0t394mgws5d%0_gsk_#sbhf20kn+i+-e6cuj&29@us4e4(#i$s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +37,7 @@ INSTALLED_APPS = [
     'users',
 
     # Third party apps
-    'bootstrap4',
+    'django_bootstrap5',
 
     # Default django apps
     'django.contrib.admin',
@@ -136,9 +135,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My settings
 LOGIN_URL = 'users:login'
-
-# Heroku settings.
-django_heroku.settings(locals())
 
 if os.environ.get('DEBUG') == 'TRUE':
     DEBUG = True
