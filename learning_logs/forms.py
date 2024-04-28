@@ -1,10 +1,19 @@
+"""
+Forms for the learning_logs app.
+"""
 from django import forms
 
 from .models import Topic, Entry
 
 
 class TopicForm(forms.ModelForm):
+    """
+    Form for creating a new topic.
+    """
     class Meta:
+        """
+        Meta class for TopicForm.
+        """
         model = Topic
         fields = ['text', 'public']
         labels = {'text': '', 'public': 'Make Public'}
@@ -12,6 +21,9 @@ class TopicForm(forms.ModelForm):
 
 
 class EntryForm(forms.ModelForm):
+    """
+    Form for creating a new entry.
+    """
     class Meta:
         model = Entry
         fields = ['text']
