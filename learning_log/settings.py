@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0t394mgws5d%0_gsk_#sbhf20kn+i+-e6cuj&29@us4e4(#i$s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['learning-log.alwaysdata.net', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -140,7 +140,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # My settings
 LOGIN_URL = 'users:login'
 
-if os.environ.get('DEBUG') == 'TRUE':
-    DEBUG = True
-elif os.environ.get('DEBUG') == 'FALSE':
-    DEBUG = False
+DEBUG = True if os.environ.get('DEBUG') == 'TRUE' else False
